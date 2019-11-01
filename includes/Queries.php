@@ -23,11 +23,6 @@ class Queries{
 	}
 	
 	public function addData($table, $data){
-		$sql = "insert into meta_data values ()";
-		$ps = $this->conn->prepare($sql);
-		$result = $ps->execute($data);
-		$columnString['meta_data_id'] = 'meta_data_id';
-		$valueString['meta_data_id'] = $result['meta_data_id'];
 		$columnString = implode(", ", array_keys($data));
 		$valueString = " :".implode(", :", array_keys($data));
 		

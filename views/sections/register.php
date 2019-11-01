@@ -33,7 +33,7 @@ require_once('../../helper/constants.php');
 					<img src="<?php echo BASEASSETS;?>img/service.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="<?php echo BASEURL ?>helper/routing.php">
+				<form class="login100-form validate-form" method="POST" action="<?php echo BASEURL ?>helper/register-helper.php">
 					<span class="login100-form-title">
 						Member Register
 					</span>
@@ -83,7 +83,7 @@ require_once('../../helper/constants.php');
 						</span>
           </div>
           <div>
-						<select class="custom-select input100" id="inputGroupSelect01">
+						<select class="custom-select input100" id="inputGroupSelect01" name="type[]">
 							<option selected>Choose...</option>
 							<option value="patient">Patient</option>
 							<option value="doctor">Doctor</option>
@@ -91,9 +91,7 @@ require_once('../../helper/constants.php');
 					</div>
 					
 					<div class="container-login100-form-btn">
-          <button class="login100-form-btn" type="submit">
-							Create Your Account
-						</button>
+          	<input class="login100-form-btn" type="submit" value="Create Your Account" name="parent_register_submit">
 					</div>
 
 					<div class="text-center p-t-40">
