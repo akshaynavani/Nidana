@@ -21,7 +21,8 @@ require_once('../../helper/constants.php');
 	<link rel="stylesheet" type="text/css" href="<?php echo BASEASSETS;?>vendor/select2/select2.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo BASEASSETS;?>css/util.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo BASEASSETS;?>css/main.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo BASEASSETS;?>css/main.css">
+  <link rel="stylesheet" href="<?php echo BASEASSETS;?>vendor/date-picker/datepicker.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -32,16 +33,16 @@ require_once('../../helper/constants.php');
 					<img src="<?php echo BASEASSETS;?>img/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="<?php echo BASEURL ?>helper/routing.php">
 					<span class="login100-form-title">
-						Member Login
+						Member Register
 					</span>
 
           <div class="wrap-input100 validate-input" data-validate = "Name is required">
 						<input class="input100" type="text" name="name" placeholder="Name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
 
@@ -60,37 +61,37 @@ require_once('../../helper/constants.php');
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
           </div>
-          <div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
+          <div class="wrap-input100 validate-input" data-validate = "Address is required">
+						<textarea class="input100" type="text" name="address" placeholder="Address" style="height: 90px;padding-top: 10px"></textarea>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+						</span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate = "Phone Number is required">
+						<input class="input100" type="text" name="phone_number" placeholder="Phone Number">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-phone" aria-hidden="true"></i>
 						</span>
           </div>
           <div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" name="dob" placeholder="Date of Birth" data-toggle="datepicker">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-          </div>
-          <div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+							<i class="fa fa-calendar" aria-hidden="true"></i>
 						</span>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
+          <button class="login100-form-btn" type="submit">
+							Create Your Account
 						</button>
 					</div>
 
-					<div class="text-center p-t-136">
-						<a class="txt2" href="<?php echo BASEURL;?>register">
-							Create your Account
+					<div class="text-center p-t-40">
+						<a class="txt2" href="<?php echo BASEURL;?>login">
+							Login
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -117,6 +118,10 @@ require_once('../../helper/constants.php');
 		})
 	</script>
 <!--===============================================================================================-->
+  <script src="<?php echo BASEASSETS;?>vendor/date-picker/datepicker.min.js"></script>
+  <script>
+    $('[data-toggle="datepicker"]').datepicker();
+  </script>
 	<script src="<?php echo BASEASSETS;?>js/main.js"></script>
 
 </body>

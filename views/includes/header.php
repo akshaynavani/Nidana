@@ -26,6 +26,8 @@ require_once('../../helper/constants.php');
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>css/nice-select.css">
     <!-- swiper CSS -->
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>css/slick.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="<?php echo BASEASSETS;?>vendor/date-picker/datepicker.min.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>css/style.css">
 </head>

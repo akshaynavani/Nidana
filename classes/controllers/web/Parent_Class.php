@@ -18,5 +18,10 @@ class Parent_Class{
         }
         return false;
     }
+
+    public function register($data){
+        $this->query->addData($data);
+        
+    }
 }
 ?>
