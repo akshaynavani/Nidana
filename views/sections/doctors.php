@@ -1,20 +1,9 @@
 <?php 
+$_SESSION['current_page'] = "Appointment";
 require_once('../includes/header.php');
 require_once('../includes/navigation.php');
+require_once('../includes/header-bp.php');
 ?>
-    <section class="breadcrumb_part breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item">
-                            <h2>doctors</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <div class="whole-wrap">
 		  <div class="container box_1170">
         <div class="section-top-border">

@@ -1,4 +1,5 @@
-<?php 
+<?php
+$_SESSION['current_page'] = "Home"; 
 require_once('../includes/header.php');
 require_once('../includes/navigation.php');
 ?>
