@@ -17,6 +17,14 @@
     <script src="<?php echo BASEASSETS;?>js/jquery.validate.min.js"></script>
     <script src="<?php echo BASEASSETS;?>js/mail-script.js"></script>
     <script src="<?php echo BASEASSETS;?>js/contact.js"></script>
+    <!-- File Input js -->
+    <!-- <script src="<?php echo BASEASSETS;?>fonts/"></script> -->
+    <script src="<?php echo BASEASSETS;?>vendor/file-input/js/plugins/piexif.min.js"></script>
+    <script src="<?php echo BASEASSETS;?>vendor/file-input/js/plugins/sortable.min.js"></script>
+    <script src="<?php echo BASEASSETS;?>vendor/file-input/js/plugins/purify.min.js"></script>
+    <script src="<?php echo BASEASSETS;?>vendor/file-input/js/fileinput.js"></script>
+    <script src="<?php echo BASEASSETS;?>vendor/file-input/themes/fa/theme.min.js"></script>
+    <!-- <script src="<?php echo BASEASSETS;?>vendor/file-input/js/locales/(lang).js"></script> -->
     <!-- custom js -->
     <script src="<?php echo BASEASSETS;?>js/custom.js"></script>
 </body>

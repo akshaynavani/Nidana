@@ -6,17 +6,19 @@ require_once('../includes/header-bp.php');
 ?>
 
     <!-- about us part start-->
-    <section class="about_us single_about_padding" style="margin-bottom: 0px">
+    
+    <section class="about_us single_about_padding" style="margin-bottom: 0px;padding: 50px">
+    <h1 style="margin-left: 140px;mergin-bottom: 50px">Upload Image from local Storage : </h1>
         <div class="container">
             <div class="row justify-content-between align-items-center">
+                
                 <div class="col-md-6 col-lg-6">
                     <div class="about_us_img">
                     <video onclick="snapshot(this);" width=600 height=450 id="video" controls autoplay></video>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-5">
+                <div class="col-md-6 col-lg-5" style="margin:10px">
                     <div class="about_us_text">
-                        <h4>SnapShot : </h4>
                         <canvas  id="myCanvas" width="400" height="350" style="border: 10px; background-color: #5996FF"></canvas>
                         <!-- <button class="btn_2 " onclick="startWebcam();" style="margin-right: 10px;border: 0px">Start Camera</button>
                         <button class="btn_2 " onclick="stopWebcam();" style="margin-right: 10px;border: 0px">Stop Camera</button> -->

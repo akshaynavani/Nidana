@@ -4,7 +4,7 @@ require_once('../../helper/constants.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Register</title>
+	<title>Nídαnα - Register</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -30,7 +30,7 @@ require_once('../../helper/constants.php');
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="<?php echo BASEASSETS;?>img/service.png" alt="IMG">
+				<a href="<?php echo BASEURL;?>"><img src="<?php echo BASEASSETS;?>img/service.png" alt="IMG" ></a>
 				</div>
 
 				<form class="login100-form validate-form" method="POST" action="<?php echo BASEURL ?>helper/register-helper.php">
