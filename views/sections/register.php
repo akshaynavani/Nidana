@@ -83,7 +83,7 @@ require_once('../../helper/constants.php');
 						</span>
           </div>
           <div>
-						<select class="custom-select input100" id="inputGroupSelect01">
+						<select class="custom-select input100" id="inputGroupSelect01" name="type[]">
 							<option selected>Choose...</option>
 							<option value="patient">Patient</option>
 							<option value="doctor">Doctor</option>

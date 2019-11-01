@@ -2,7 +2,7 @@
 session_start();
 require_once('../classes/controllers/web/Parent_Class.php');
 if(isset($_POST['parent_register_submit'])){
-    if($_POST['type'] == 'patient'){
+    if($_POST['type'][0] == 'patient'){
         $parent = new Parent_Class();
         unset($_POST['parent_register_submit']);
         unset($_POST['type']);
