@@ -5,7 +5,7 @@ class Database{
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
-	private $dbname = "hire_connect";
+	private $dbname = "nidana";
 
     /**
      * Database constructor.

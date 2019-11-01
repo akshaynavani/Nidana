@@ -1,4 +1,4 @@
-<?
+<?php
 require_once('../../helper/constants.php');
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ require_once('../../helper/constants.php');
 					<img src="<?php echo BASEASSETS;?>img/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method='POST' action="<?php echo BASEURL?>helper/login-helper.php">
 					<span class="login100-form-title">
 						Member Login
 					</span>
@@ -46,7 +46,7 @@ require_once('../../helper/constants.php');
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -54,9 +54,7 @@ require_once('../../helper/constants.php');
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
+						<input class="login100-form-btn" value="Login" name="login_submit" type="submit">
 					</div>
 
 					<div class="text-center p-t-136">
