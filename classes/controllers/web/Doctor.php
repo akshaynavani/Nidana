@@ -19,8 +19,9 @@ class Doctor{
         return false;
     }
 
-    public function register(){
-        
+    public function register($data){
+        return $this->query->addData("patients",$data);
+
     }
 }
 ?>

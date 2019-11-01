@@ -20,8 +20,8 @@ class Parent_Class{
     }
 
     public function register($data){
-        $this->query->addData($data);
-        
+        return $this->query->addData("patients",$data);
+
     }
 }
 ?>
