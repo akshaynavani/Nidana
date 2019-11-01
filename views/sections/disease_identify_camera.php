@@ -20,8 +20,6 @@ require_once('../includes/header-bp.php');
                 <div class="col-md-6 col-lg-5" style="margin:10px">
                     <div class="about_us_text">
                         <canvas  id="myCanvas" width="400" height="350" style="border: 10px; background-color: #5996FF"></canvas>
-                        <!-- <button class="btn_2 " onclick="startWebcam();" style="margin-right: 10px;border: 0px">Start Camera</button>
-                        <button class="btn_2 " onclick="stopWebcam();" style="margin-right: 10px;border: 0px">Stop Camera</button> -->
                         <button class="btn_2 " onclick="snapshot();" style="margin-right: 5px;border: 0px">Take Snapshot</button>
                         <button class="btn_2 " onclick="checkDisease();" style="margin-right: 10px;border: 0px">Check Disease</button>
                     </div>
@@ -88,8 +86,21 @@ require_once('../includes/footer.php');
       }
       function checkDisease(){
         ctx = document.getElementById("myCanvas").getContext('2d');
-        console.log(ctx.getImageData(0, 0, canvas.width, canvas.height));
+        console.log(["Data", ctx.getImageData(0, 0, canvas.width, canvas.height)["data"]]);
+        // $.ajax({
+        //   url: "http://127.0.0.1:5000/detect_disease",
+        //   type: "POST",
+        //   data: ctx.getImageData(0, 0, canvas.width, canvas.height),
+        //   success: function(res){
+        //     console.log(res);
+        //   },
+        //   error: function(err){
+        //     console.log(err);
+        //   }
+        // });
+        
       }
+
   </script>
 <?php
 require_once('../includes/scripts.php');
