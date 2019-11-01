@@ -1,4 +1,4 @@
-<?
+<?php
 require_once('../../helper/constants.php');
 ?>
 <!doctype html>
@@ -27,7 +27,7 @@ require_once('../../helper/constants.php');
     <!-- swiper CSS -->
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>css/slick.css">
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="<?php echo BASEASSETS;?>vendor/date-picker/datepicker.min.css">
+    <link rel="stylesheet" href="<?php echo BASEASSETS;?>vendor/date-picker/datepicker.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="<?php echo BASEASSETS;?>css/style.css">
 </head>
