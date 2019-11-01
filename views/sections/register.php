@@ -30,7 +30,7 @@ require_once('../../helper/constants.php');
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="<?php echo BASEASSETS;?>img/img-01.png" alt="IMG">
+					<img src="<?php echo BASEASSETS;?>img/service.png" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form" method="POST" action="<?php echo BASEURL ?>helper/register-helper.php">
@@ -81,6 +81,13 @@ require_once('../../helper/constants.php');
 						<span class="symbol-input100">
 							<i class="fa fa-calendar" aria-hidden="true"></i>
 						</span>
+          </div>
+          <div>
+						<select class="custom-select input100" id="inputGroupSelect01">
+							<option selected>Choose...</option>
+							<option value="patient">Patient</option>
+							<option value="doctor">Doctor</option>
+						</select>
 					</div>
 					
 					<div class="container-login100-form-btn">
