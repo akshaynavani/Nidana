@@ -1,112 +1,48 @@
-<?php 
-$_SESSION['current_page'] = "Appointment";
+<?php
+$_SESSION['current_page']  = "Appointment";
+ob_start();
 require_once('../includes/header.php');
 require_once('../includes/navigation.php');
-require_once('../includes/header-bp.php');
+require_once('../../classes/controllers/web/Doctor.php');
+require_once('../../classes/controllers/web/Specialization.php');
+session_start();
+$disease = "Downsyndrome";
 ?>
     <div class="whole-wrap">
 		  <div class="container box_1170">
         <div class="section-top-border">
-
+<?php if($_SESSION['type']=='patient'){  ?>
 				  <h3 class="mb-30">Table</h3>
           <div class="progress-table-wrap">
             <div class="progress-table">
               <div class="table-head">
                 <div class="serial">#</div>
-                <div class="country">Countries</div>
-                <div class="visit">Visits</div>
-                <div class="percentage">Percentages</div>
+                <div class="country">Name</div>
+                <div class="visit">Phone Number</div>
+                <div class="percentage">Address</div>
+                <div class="percentage">Percentage</div>
+                <div class="">Appointment</div>
               </div>
-              <div class="table-row">
-                <div class="serial">01</div>
-                <div class="country"> <img src="img/elements/f1.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-1" role="progressbar" style="width: 80%"
-                      aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="serial">02</div>
-                <div class="country"> <img src="img/elements/f2.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-2" role="progressbar" style="width: 30%"
-                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="serial">03</div>
-                <div class="country"> <img src="img/elements/f3.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-3" role="progressbar" style="width: 55%"
-                      aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="serial">04</div>
-                <div class="country"> <img src="img/elements/f4.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-4" role="progressbar" style="width: 60%"
-                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="serial">05</div>
-                <div class="country"> <img src="img/elements/f5.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-5" role="progressbar" style="width: 40%"
-                      aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="serial">06</div>
-                <div class="country"> <img src="img/elements/f6.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-6" role="progressbar" style="width: 70%"
-                      aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="serial">07</div>
-                <div class="country"> <img src="img/elements/f7.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-7" role="progressbar" style="width: 30%"
-                      aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="table-row">
-                <div class="serial">08</div>
-                <div class="country"> <img src="img/elements/f8.jpg" alt="flag">Canada</div>
-                <div class="visit">645032</div>
-                <div class="percentage">
-                  <div class="progress">
-                    <div class="progress-bar color-8" role="progressbar" style="width: 60%"
-                      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
+              <?php
+                $doctor = new Doctor();
+                $specialisation = new Specialization();
+                $rs = $specialisation->doctorsList($disease);
+                for($i=0;$i<sizeof($rs);$i++){
+                  $url = BASEURL."helper/appointment-helper.php";
+                  $result = $doctor->getDetails($rs[$i]['doctor_id']);
+                  $id = $result[$i]['doctor_id'];
+                  $name = $result[$i]['name'];
+                  $phone_no = $result[$i]['phone_number'];
+                  $address = $result[$i]['address'];
+                  $rating = 5*$rs[$i]['rating'];
+                  echo "<div class='table-row'><div class='serial'>$i</div><div class='country'>$name</div><div class='visit'>$phone_no</div><div class='percentage'>$address</div><div class='progress-bar color-1' role='progressbar' style='width:$rating%' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100'></div></div></div>";
+                  echo "<form method='POST' action='$url' ><input type='text' hidden value='$id' name='doctor_id'><input type='submit' name='appoint_submit' value='Take'></form>";
+                }
+              ?>
             </div>
           </div>
+              <?php  } ?>
+
         </div>
       </div>
     </div>

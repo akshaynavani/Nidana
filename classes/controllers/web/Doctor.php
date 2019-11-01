@@ -1,6 +1,6 @@
 <?php
-require_once('../includes/Database.php');
-require_once('../includes/Queries.php');
+require_once('Database.php');
+require_once('Queries.php');
 class Doctor{
     protected $conn;
     protected $query;
@@ -17,6 +17,11 @@ class Doctor{
             return $result;
         }
         return false;
+    }
+
+    public function getDetails($id){
+        $sql = "SELECT * FROM doctors WHERE doctor_id = $id";
+        return $this->query->readDataCustom($sql);
     }
 
     public function register($data){
