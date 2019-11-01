@@ -1,8 +1,10 @@
 <?php 
+ob_start();
 require_once('../includes/header.php');
 require_once('../includes/navigation.php');
 require_once('../../classes/controllers/web/Doctor.php');
 require_once('../../classes/controllers/web/Specialization.php');
+session_start();
 $disease = "Downsyndrome";
 ?>
     <section class="breadcrumb_part breadcrumb_bg">
@@ -21,7 +23,7 @@ $disease = "Downsyndrome";
     <div class="whole-wrap">
 		  <div class="container box_1170">
         <div class="section-top-border">
-
+<?php if($_SESSION['type']=='patient'){  ?>
 				  <h3 class="mb-30">Table</h3>
           <div class="progress-table-wrap">
             <div class="progress-table">
@@ -38,6 +40,7 @@ $disease = "Downsyndrome";
                 $specialisation = new Specialization();
                 $rs = $specialisation->doctorsList($disease);
                 for($i=0;$i<sizeof($rs);$i++){
+                  $url = BASEURL."helper/appointment-helper.php";
                   $result = $doctor->getDetails($rs[$i]['doctor_id']);
                   $id = $result[$i]['doctor_id'];
                   $name = $result[$i]['name'];
@@ -45,11 +48,13 @@ $disease = "Downsyndrome";
                   $address = $result[$i]['address'];
                   $rating = 5*$rs[$i]['rating'];
                   echo "<div class='table-row'><div class='serial'>$i</div><div class='country'>$name</div><div class='visit'>$phone_no</div><div class='percentage'>$address</div><div class='progress-bar color-1' role='progressbar' style='width:$rating%' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100'></div></div></div>";
-                  echo "<form method='POST' action='' ><input type='text' hidden value='$id'><input type='submit' value='Take'></form>";
+                  echo "<form method='POST' action='$url' ><input type='text' hidden value='$id' name='doctor_id'><input type='submit' name='appoint_submit' value='Take'></form>";
                 }
               ?>
             </div>
           </div>
+              <?php  } ?>
+
         </div>
       </div>
     </div>

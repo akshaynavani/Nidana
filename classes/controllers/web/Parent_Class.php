@@ -1,6 +1,6 @@
 <?php
-require_once('../includes/Database.php');
-require_once('../includes/Queries.php');
+require_once('Database.php');
+require_once('Queries.php');
 class Parent_Class{
     protected $conn;
     protected $query;
