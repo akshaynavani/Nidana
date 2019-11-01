@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^$ views/sections/index.php
+RewriteRule ^login$ views/sections/login.php
+RewriteRule ^register$ views/sections/register.php
