@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2019 at 10:50 AM
+-- Generation Time: Nov 01, 2019 at 11:38 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -50,7 +50,8 @@ CREATE TABLE `doctors` (
   `phone_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -89,19 +90,20 @@ CREATE TABLE `patients` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone_number` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `patients`
 --
 
-INSERT INTO `patients` (`patient_id`, `name`, `dob`, `address`, `email`, `phone_number`, `created_at`, `updated_at`) VALUES
-(1, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:05:55', '2019-10-31 07:05:55'),
-(2, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:06:44', '2019-10-31 07:06:44'),
-(3, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:09:08', '2019-10-31 07:09:08'),
-(4, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:09:56', '2019-10-31 07:09:56'),
-(5, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:10:19', '2019-10-31 07:10:19');
+INSERT INTO `patients` (`patient_id`, `name`, `dob`, `address`, `email`, `phone_number`, `created_at`, `updated_at`, `password`) VALUES
+(1, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:05:55', '2019-10-31 07:05:55', ''),
+(2, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:06:44', '2019-10-31 07:06:44', ''),
+(3, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:09:08', '2019-10-31 07:09:08', ''),
+(4, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:09:56', '2019-10-31 07:09:56', ''),
+(5, 'Varun', '1777-09-08', 'Manali Building', 'varunjhd@gmail.com', '8177847976', '2019-10-31 07:10:19', '2019-10-31 07:10:19', '');
 
 -- --------------------------------------------------------
 
